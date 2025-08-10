@@ -22,6 +22,10 @@ app.use('/api/v1',userRoutes);
 
 dbConnect();
 
+app.get('/', (req, res) => {
+  res.send(`<h1>Welcome to Ts-Based Backend</h1>`);
+});
+
 app.listen(PORT, () => {
   console.log(`Server started at PORT ${PORT}`);
 });
