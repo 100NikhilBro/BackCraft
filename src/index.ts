@@ -5,6 +5,7 @@ import dbConnect from "./config/db";
 import taskRoutes from './routes/taskRoutes';
 import cookieParser from 'cookie-parser';
 import userRoutes from './routes/userRoutes';
+import helmet from 'helmet';
 
 dotenv.config();
 
@@ -14,7 +15,7 @@ const PORT = process.env.PORT || 5678;
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cookieParser());
-
+app.use(helmet());
 
 app.use('/api/v1',taskRoutes);
 app.use('/api/v1',userRoutes);
